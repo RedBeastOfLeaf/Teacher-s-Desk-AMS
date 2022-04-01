@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock title %}
+{% block body %}
+    <div class="home">
+        <div class="sidebar">
+            <header class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="logo">
+            </header>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/" class="link">Home</a></li>
+                    <li><a href="" class="link">X</a></li>
+                    <li><a href="" class="link">Y</a></li>
+                    <li><a href="" class="link">Z</a></li>
+                    <li><a href="/login" class="link">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock body %}

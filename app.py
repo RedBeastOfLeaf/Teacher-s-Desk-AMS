@@ -78,7 +78,7 @@ def home():
         flash("Absent Roll Numbers: " + str(set(absent)))
         flash("Total Absentees: " + str(len(set(absent))))
 
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/login')
 def login():
