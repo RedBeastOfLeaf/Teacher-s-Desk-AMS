@@ -74,6 +74,7 @@ def home():
 
         absent = [j for j in range(1, total_batch_size) if j not in Present]
 
+        flash("Present Roll Numbers: " + str(Present))
         flash("Absent Roll Numbers: " + str(set(absent)))
         flash("Total Absentees: " + str(len(set(absent))))
 
