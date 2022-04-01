@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>TDesk</title>
+</head>
+<body>
+    <div class="header">
+        <h1>T-DESK</h1>
+    </div>
+    <div class="inp">
+        <form action="/" method="POST" enctype="multipart/form-data" class="f-input">
+            <label for="img">Enter Screenshot</label>
+            <input type="file" name="files[]" id="img" multiple="true" autocomplete="off" required>
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,8 @@
+numpy
+pillow
+opencv-python
+tensorflow
+matplotlib
+pandas
+easyocr
+opencv-python-headless==4.5.2.52
