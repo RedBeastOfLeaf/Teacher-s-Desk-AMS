@@ -5,6 +5,7 @@ import os
 import easyocr
 # import matplotlib.pyplot as plt
 import re
+import sqlite3
 
 with open(r'./x.yaml') as file:
     important = yaml.load(file, Loader=yaml.FullLoader)
@@ -23,6 +24,22 @@ def recognize_text(img_path):
 
 def extract_numbers(string):
     return re.findall("[0-9]+._.[a-z]+|[0-9]+._.[A-Z]+|[0-9]+ [A-Z]+|[0-9]+._.", string)
+
+#connect to database
+def connect_db():
+    conn = sqlite3.connect(important['t-desk.db'])
+    c = conn.cursor()
+    return c, conn
+
+#check if database is connected
+def check_db(c, conn):
+    try:
+        c.execute("SELECT * FROM t_desk")
+        conn.commit()
+        return True
+    except:
+        return False    
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -79,6 +96,15 @@ def home():
         flash("Total Absentees: " + str(len(set(absent))))
 
     return render_template('home.html')
+
+#take input into database and fetch data from database
+@app.route('/attendance', methods=['GET', 'POST'])
+def attendance():
+    conn = sqlite3.connect(important['t-desk.db'])
+    posts = conn.execute('SELECT * FROM t-desk').fetchall()
+    conn.close()
+    return posts
+
 
 @app.route('/login')
 def login():
