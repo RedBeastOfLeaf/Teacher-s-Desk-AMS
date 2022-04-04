@@ -3,82 +3,99 @@
     Home
 {% endblock title %}
 {% block body %}
-    <div class="home">
-        <div class="sidebar">
-            <header class="logo">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
-            </header>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li>
-                        <a href="/" class="link">
-                            <span>&#127968;</span>
-                            <p>Dashboard</p>
-                            <div class="tag"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="link">
-                            <span>&#127891;</span>
-                            <p>Classrooms</p>
-                            <div class="tag"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="link">
-                            <span>&#128202;</span>
-                            <p>Analytics</p>
-                            <div class="tag"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="link">
-                            <span>&#128213;</span>
-                            <p>Defaulters</p>
-                            <div class="tag"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="link">
-                            <span>&#128221;</span>
-                            <p>Edit Account</p>
-                            <div class="tag"></div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <footer class="sidebar-footer">
-                <a href="/login" class="login">Login</a>
-            </footer>
-        </div>
-        <div class="mid-content">
-            <header class="mid-header">
-                <h4>Student Attendance</h4>
-                <h1>Dashboard</h1>
-            </header>
-            <div class="mid-attendance">
-                <p>Today's Attendance</p>
-                <div class="mid-attendance-content">
-                    <div class="mid-attendance-content-parameters">
-                        <h2>687</h2>
-                        <p>Total Present</p>
-                    </div>
-                    <div class="mid-attendance-content-parameters">
-                        <h2>134</h2>
-                        <p>Total Absent</p>
-                    </div>
-                    <div class="mid-attendance-content-parameters">
-                        <h2>84.28%</h2>
-                        <p>Average Attendance</p>
-                    </div>
-                    <div class="mid-attendance-content-parameters">
-                        <h2>08</h2>
-                        <p>Total Classrooms</p>
-                    </div>
+<div class="home">
+    <div class="sidebar">
+        <header class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        </header>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="/" class="link">
+                        <span>&#127968;</span>
+                        <p>Dashboard</p>
+                        <div class="tag"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="link">
+                        <span>&#127891;</span>
+                        <p>Classrooms</p>
+                        <div class="tag"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="link">
+                        <span>&#128202;</span>
+                        <p>Analytics</p>
+                        <div class="tag"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="link">
+                        <span>&#128213;</span>
+                        <p>Defaulters</p>
+                        <div class="tag"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="link">
+                        <span>&#128221;</span>
+                        <p>Edit Account</p>
+                        <div class="tag"></div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <footer class="sidebar-footer">
+            <a href="/login" class="login">Login</a>
+        </footer>
+    </div>
+    <div class="mid-content">
+        <header class="mid-header">
+            <h4>Student Attendance</h4>
+            <h1>Dashboard</h1>
+        </header>
+        <div class="mid-attendance">
+            <p>Today's Attendance</p>
+            <div class="mid-attendance-content">
+                <div class="mid-attendance-content-parameters">
+                    <h2>687</h2>
+                    <p>Total Present</p>
+                </div>
+                <div class="mid-attendance-content-parameters">
+                    <h2>134</h2>
+                    <p>Total Absent</p>
+                </div>
+                <div class="mid-attendance-content-parameters">
+                    <h2>84.28%</h2>
+                    <p>Average Attendance</p>
+                </div>
+                <div class="mid-attendance-content-parameters">
+                    <h2>08</h2>
+                    <p>Total Classrooms</p>
                 </div>
             </div>
         </div>
+        <div class="mid-overview">
+            <h2 class="mid-overview-header">
+                Attendance Overview
+            </h2>
+            <div class="mid-overview-graph"></div>
+        </div>
+        <div class="mid-by-class">
+            <h2 class="mid-by-class-header">
+                Attendance By Class
+            </h2>
+            <div class="mid-by-class-graph"></div>
+        </div>
     </div>
+    <div class="right-content">
+        <div class="calendar">
+            
+        </div>
+    </div>
+</div>
 {% endblock body %}
 
 
