@@ -19,7 +19,6 @@ app.config['SQLALCHEMY_BINDS'] = {'classroom' : 'sqlite:///database/Classroom.db
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
 #create teacher table
 class Teacher(db.Model):
     teacher_id = db.Column(db.Integer, primary_key = True, nullable = False, unique=True)
@@ -106,7 +105,7 @@ def home():
 
             present = extract_numbers(result)
 
-            present = re.findall("[0-9]+", str(present))
+            present = re.findall("[1-9]+", str(present))
 
             present = set(map(int, present))
 
@@ -151,7 +150,7 @@ def login():
             if t == None:
                 return "Wrong login credentials"
             elif t.password == password:
-                return "logged in"
+                return redirect(url_for('home'))
             return "Wrong login credentials"
         return "Wrong login credentials"
     return render_template('login.html')

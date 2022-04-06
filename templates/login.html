@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock title %}
 {% block body %}
-<div class="login-page">
-    <form action="/login" method="post" class="login-form">
-        <input type="email" name="email" id="email">
-        <label for="email">Email ID</label>
-        <input type="password" name="password" id="password">
-        <label for="password">Password</label>
-        <input type="submit" value="Login">
-        <input type="submit" value="Login">
-    </form>
+<div class="login-signup-page">
+    <div class="login-signup">
+        <div class="left-login-or-signup">
+            <h1>Login</h1>
+            <form action="/login" method="post" class="login-form">
+                <div class="inp">
+                    <input type="email" class="input-field" name="email" id="email" required autofocus>
+                    <span></span>
+                    <label for="email">Email ID</label>
+                </div>
+                <div class="inp">
+                    <input type="password" class="input-field" name="password" id="password">
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <input type="submit" class="input-submit" value="Login">
+            </form>
+        </div>
+        <div class="right-login-or-signup">
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_hzgq1iov.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        </div>
+    </div>
 </div>
 {% endblock body %}
